@@ -12,33 +12,33 @@ from Stu.StuSerializer import AllStuinfoShowSerializer, AddStuinfoSerializer, Ed
 from Stu.models import StuInfo
 import random as r
 
-class AddIntosql():
-    first = ('张', '王', '李', '赵', '金', '艾', '单', '龚', '钱', '周', '吴', '郑', '孔', '曺', '严', '华', '吕', '徐', '何')
-    middle = ('芳', '军', '建', '明', '辉', '芬', '红', '丽', '功')
-    last = ('明', '芳', '', '民', '敏', '丽', '辰', '楷', '龙', '雪', '凡', '锋', '芝', '')
-    stuphone = ('110', '119', '120', '114')
-    stumajor = ('计算机科学与技术', '电子信息技术', '商务英语', '国际贸易', '金融')
-    stufaculty = ('信息管理与技术学院', '外国语学院', '会计学院', '国际金融学院')
-    stuadress = ('湖南省衡阳市', '湖南省长沙市', '湖南岳阳市',)
-    stu = StuInfo
-    for i in range(2000):
-        stu.stuname = r.choice(first) + r.choice(middle) + r.choice(last)
-        stu.stunum = '20170821' + r.randint(1000, 10000).__str__()
-        stu.stuphone = r.choice(stuphone)
-        stu.stubirth = r.randint(1995, 2003).__str__() + '-0' + r.randint(1, 9).__str__() + '-' + r.randint(1,
-                                                                                                            28).__str__()
-        stu.stusex = r.randint(0, 1)
-        stu.stuidcard = '43042619' + r.randint(95, 99).__str__() + r.randint(1, 12).__str__() + r.randint(1,
-                                                                                                          12).__str__() + r.randint(
-            1000, 9999).__str__()
-        stu.stumajor = r.choice(stumajor)
-        stu.stufaculty = r.choice(stufaculty)
-        stu.stuin = '20' + r.randint(16, 20).__str__() + '-09-01'
-        stu.stuadress = r.choice(stuadress)
-        stu.stubirth = stu.stubirth[0:10]
-        stu.stuin = stu.stuin[0:10]
-        print(stu.stunum)
-        stu.save()
+# class AddIntosql():
+#     first = ('张', '王', '李', '赵', '金', '艾', '单', '龚', '钱', '周', '吴', '郑', '孔', '曺', '严', '华', '吕', '徐', '何')
+#     middle = ('芳', '军', '建', '明', '辉', '芬', '红', '丽', '功')
+#     last = ('明', '芳', '', '民', '敏', '丽', '辰', '楷', '龙', '雪', '凡', '锋', '芝', '')
+#     stuphone = ('110', '119', '120', '114')
+#     stumajor = ('计算机科学与技术', '电子信息技术', '商务英语', '国际贸易', '金融')
+#     stufaculty = ('信息管理与技术学院', '外国语学院', '会计学院', '国际金融学院')
+#     stuadress = ('湖南省衡阳市', '湖南省长沙市', '湖南岳阳市',)
+#     stu = StuInfo
+#     for i in range(2000):
+#         stu.stuname = r.choice(first) + r.choice(middle) + r.choice(last)
+#         stu.stunum = '20170821' + r.randint(1000, 10000).__str__()
+#         stu.stuphone = r.choice(stuphone)
+#         stu.stubirth = r.randint(1995, 2003).__str__() + '-0' + r.randint(1, 9).__str__() + '-' + r.randint(1,
+#                                                                                                             28).__str__()
+#         stu.stusex = r.randint(0, 1)
+#         stu.stuidcard = '43042619' + r.randint(95, 99).__str__() + r.randint(1, 12).__str__() + r.randint(1,
+#                                                                                                           12).__str__() + r.randint(
+#             1000, 9999).__str__()
+#         stu.stumajor = r.choice(stumajor)
+#         stu.stufaculty = r.choice(stufaculty)
+#         stu.stuin = '20' + r.randint(16, 20).__str__() + '-09-01'
+#         stu.stuadress = r.choice(stuadress)
+#         stu.stubirth = stu.stubirth[0:10]
+#         stu.stuin = stu.stuin[0:10]
+#         print(stu.stunum)
+#         stu.save()
 
 class GetStuInfo(APIView):
 
